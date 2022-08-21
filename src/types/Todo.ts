@@ -1,5 +1,5 @@
 export interface Todo {
-    id: string,
+    id: any,
     task: string,
     isCompleted: boolean,
 }

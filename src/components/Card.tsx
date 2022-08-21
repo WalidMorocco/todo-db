@@ -1,10 +1,6 @@
+import { Todo } from "../types/Todo"
 import {DeleteTodo} from "./DeleteTodo"
-// Create the type Todo 
-type Todo = {
-    id: string
-    task: string
-    isCompleted: boolean
-}
+
 
 // Create TodoProp to use props with our Todo type
 type TodoProps = {
@@ -34,6 +30,7 @@ export const Card = ({
                 `}
             >{task}
             </p>
+            <p>{isCompleted}</p>
         </div>
         
 
@@ -52,6 +49,7 @@ export const Card = ({
             <DeleteTodo 
             id={id}
             handleDeleteTodo={() => handleDeleteTodo(id)} />
+            
         </div>
     </div>
 )
