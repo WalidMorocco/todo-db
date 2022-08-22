@@ -2,13 +2,22 @@ import { ReactComponent as PlusIcon } from '../assets/plus.svg'
 import React, { useState } from 'react';
 import usePost from '../hooks/usePost';
 import { v4 as uuidv4 } from "uuid"
+import Spinner from './Spinner';
 
 
 const PostingData = () => {
     const [task, setTask] = useState('');
     
-    const { postRequest  }  = usePost('http://localhost:3004/todos')
+    const { loading, error, postRequest  }  = usePost('http://localhost:3004/todos')
     
+    if (loading) return <Spinner />;
+
+  
+    if (error) {
+        console.log(error)
+        return <p>There was an error</p>;
+    }
+
     const submitForm = async (task:string) => {
         console.log(task)
         // here is the function from the usePost hook
@@ -16,7 +25,8 @@ const PostingData = () => {
           id: uuidv4,
           task: task,
           isCompleted: false
-     });
+        });
+        window.location.reload();
     }
  
     const clickHandler = (task:string) => {

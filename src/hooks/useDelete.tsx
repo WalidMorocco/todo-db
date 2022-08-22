@@ -6,7 +6,7 @@ import { Todo } from '../types/Todo';
 
 const useDelete = (url: string) => {
   const [data, setData] = useState<Todo>();
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
 
 

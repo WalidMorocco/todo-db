@@ -7,7 +7,7 @@ const baseURL = 'http://localhost:3004';
 
 const useFetch = (url: string) => {
   const [data, setData] = useState<Todo[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
 
   useEffect(() => {
