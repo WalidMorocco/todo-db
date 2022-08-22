@@ -1,7 +1,6 @@
 import { Todo } from "../types/Todo"
 import {DeleteTodo} from "./DeleteTodo"
 
-
 // Create TodoProp to use props with our Todo type
 type TodoProps = {
     // todo property type Todo

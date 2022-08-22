@@ -1,11 +1,5 @@
-import { ChangeEvent, FormEvent, useState } from "react"
 import {Card} from "./Card"
-import { data } from "../todos"
-import { AddTodo } from "./AddTodo";
-import { v4 as uuidv4 } from "uuid"
 import useFetchTodos from "../hooks/useFetchTodos";
-import { Todo } from "../types/Todo";
-
 
 
 // Create Todos component to link the data in todos.ts to the Row component
