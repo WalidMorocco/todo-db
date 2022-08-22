@@ -15,8 +15,7 @@ export const TodoList = () => {
                 // Render a row for each todo data (todos.ts)
                 <Card 
                     key={todo.id} 
-                    todo={todo}
-                    handleDeleteTodo={() => {}} 
+                    todo={todo} 
                     handleCheckTodo={() => {}}
                 />
             ))}

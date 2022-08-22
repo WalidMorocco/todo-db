@@ -2,8 +2,6 @@ import { useState } from 'react';
 import axios from 'axios';
 import { Todo } from '../types/Todo';
 
-
-
 const usePost = (url: string) => {
   const [data, setData] = useState<Todo>();
   const [loading, setLoading] = useState<boolean>(true);

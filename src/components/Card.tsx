@@ -1,18 +1,17 @@
 import { Todo } from "../types/Todo"
-import {DeleteTodo} from "./DeleteTodo"
+import DeleteTodo from "./DeleteTodo"
+
 
 // Create TodoProp to use props with our Todo type
 type TodoProps = {
     // todo property type Todo
     todo: Todo
-    handleDeleteTodo: (id: string) => void
     handleCheckTodo: (id: string) => void
 }
 
 // Create the Row component
 export const Card = ({
     todo: {task, isCompleted, id },
-    handleDeleteTodo, 
     handleCheckTodo,
 }: TodoProps) => (
 
@@ -46,8 +45,7 @@ export const Card = ({
             />
 
             <DeleteTodo 
-            id={id}
-            handleDeleteTodo={() => handleDeleteTodo(id)} />
+            id={id}/>
             
         </div>
     </div>
