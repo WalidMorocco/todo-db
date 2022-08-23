@@ -21,7 +21,7 @@ export const Card = ({
     animate={{ opacity:1 }}
     transition={{ type: "spring" }}
     className={`
-        flex w-full p-4 mb-2 rounded-3xl shadow hover:bg-purple-700
+        flex w-full p-4  rounded-3xl shadow hover:bg-purple-700
         ${isCompleted ?  "bg-purple-800" : "bg-purple-600 "}  `}
     >
 
