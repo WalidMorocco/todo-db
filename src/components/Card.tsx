@@ -1,6 +1,7 @@
 import { Todo } from "../types/Todo"
 import CompleteTodo from "./CompleteTodo"
 import DeleteTodo from "./DeleteTodo"
+import { motion } from "framer-motion";
 
 
 // Create TodoProp to use props with our Todo type
@@ -14,8 +15,13 @@ export const Card = ({
     todo: {task, isCompleted, id }
 }: TodoProps) => (
 
-    <div className={`
-        flex w-full p-4 mb-2 items-center rounded-3xl shadow
+    <motion.div  key={"my_unique_key"}
+    exit={{ opacity:0 }}
+    initial={{ opacity:0 }}
+    animate={{ opacity:1 }}
+    transition={{ type: "spring" }}
+    className={`
+        flex w-full p-4 mb-2 rounded-3xl shadow hover:bg-purple-700
         ${isCompleted ?  "bg-purple-800" : "bg-purple-600 "}  `}
     >
 
@@ -34,7 +40,7 @@ export const Card = ({
         
 
         <div id="selection"
-            className="w-1/6 flex space-x-1 items-center pl-7"
+            className="flex space-x-1 pl-10"
         >
 
             <CompleteTodo
@@ -49,5 +55,5 @@ export const Card = ({
             isCompleted={isCompleted}/>
             
         </div>
-    </div>
+    </motion.div>
 )

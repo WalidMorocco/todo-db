@@ -1,23 +1,12 @@
 import useUpdate from "../hooks/useUpdate";
 import { Todo } from "../types/Todo";
-import Spinner from "./Spinner";
+import { motion } from "framer-motion";
 
 // Create the DeleteTodo component
 const CompleteTodo  = (todo: Todo) => {
     
-    const { loading, error, updateRequest  }  = useUpdate('http://localhost:3004/todos/')
+    const { error, updateRequest  }  = useUpdate('http://localhost:3004/todos/')
  
-    if (loading) {
-        return (
-        <div >
-            <input id="checkbox"
-                type="checkbox" 
-                checked={todo.isCompleted} 
-                className="w-5 h-5 rounded-3xl animate-ping "
-            />
-        </div>
-    )};
-
     if (error) {
         return <p>There was an error</p>;
     }
@@ -41,14 +30,14 @@ const CompleteTodo  = (todo: Todo) => {
     }
 
     return (
-        <div >
+        <motion.div whileTap={{ scale: 1.3 }}>
             <input id="checkbox"
                 type="checkbox" 
                 checked={todo.isCompleted} 
-                className="w-5 h-5 rounded-3xl"
+                className="w-6 h-6"
                 onChange={clickHandler(todo)} 
             />
-        </div>
+        </motion.div>
         
     )
 }

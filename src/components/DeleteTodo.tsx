@@ -1,13 +1,11 @@
 import useDelete from "../hooks/useDelete";
 import { Todo } from "../types/Todo";
-import Spinner from "./Spinner";
+import { motion } from "framer-motion";
 
 // Create the DeleteTodo component
 const DeleteTodo  = (id: any) => {
     
-    const { loading, error, deleteRequest }  = useDelete('http://localhost:3004/todos/');
-    
-    if (loading) return <Spinner />;
+    const { error, deleteRequest }  = useDelete('http://localhost:3004/todos/');
 
     if (error) {
         return <p>There was an error</p>;
@@ -31,15 +29,15 @@ const DeleteTodo  = (id: any) => {
     }
 
     return (
-        <div >
+        <motion.div whileTap={{ scale: 1.3 }}>
             <button  id="deleteButton"
                 aria-label="Delete a todo"
-                className="h-7 w-7 flex justify-center items-center bg-gray-700 hover:bg-gray-800 text-white font-bold rounded"
+                className="h-6 w-6 justify-center items-center bg-gray-700 hover:bg-gray-800 text-white font-bold rounded"
                 onClick={clickHandler(id)}
             >
                 X
             </button>
-        </div>
+        </motion.div>
     )
 }
 

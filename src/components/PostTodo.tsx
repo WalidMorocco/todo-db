@@ -23,7 +23,7 @@ const PostingData = () => {
         // here is the function from the usePost hook
         await postRequest({
           id: uuidv4,
-          task: task,
+          task: "Test",
           isCompleted: false
         });
         window.location.reload();
@@ -38,23 +38,23 @@ const PostingData = () => {
         
     return (
         <div className="">
-            <form className="form space-y-6 py-4">
+            <form className="form space-y-9 py-4">
 
                 <div className="form-group">
                     <input
                         type="text"
                         value={task}
                         placeholder="Add a task." 
-                        className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 px-3 shadow-sm focus:outline-none focus:border-violet-500 focus:ring-violet-500 focus:ring-1 sm:text-sm"
+                        className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 px-3 shadow-sm focus:outline-none focus:border-violet-500 focus:ring-violet-500 focus:ring-1 m:text-m"
                         onChange={(e) => setTask(e.target.value)}
                     />
                 </div>
                 
-                <div className="form-group">
-                    <button onClick={clickHandler(task)} aria-label="Add todo">
-                        <PlusIcon className="h-7 w-7 animate-bounce"/>
+                <div className="flex items-center justify-center">
+                    <button onClick={clickHandler(task)} aria-label="Add todo" className="">
+                        <PlusIcon className="h-7 w-7 animate-bounce "/>
                     </button>
-                </div>   
+                </div>  
             </form>
         </div>
 
