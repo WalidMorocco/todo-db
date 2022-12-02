@@ -23,7 +23,7 @@ const PostingData = () => {
         // here is the function from the usePost hook
         await postRequest({
           id: uuidv4,
-          task: "Test",
+          task: task,
           isCompleted: false
         });
         window.location.reload();

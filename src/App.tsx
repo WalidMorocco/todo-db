@@ -3,7 +3,7 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="bg-gray-800 h-screen overflow-auto">
+    <div className="gray-800 bg-zinc-900 h-screen overflow-auto">
       <Layout/>
     </div>
   );

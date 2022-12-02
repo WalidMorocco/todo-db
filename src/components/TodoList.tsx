@@ -21,8 +21,8 @@ export const TodoList = () => {
     }
 
     return (
-        <div className="h-full flex items-center border border-red-600">
-            <div className="max-h-full shadow-inner border" >
+        <div className="h-full flex items-center">
+            <div className="max-h-full shadow-inner" >
                 <div className="break-words space-y-2">
                     {/* Map the array of data in todos.ts by taking todo:Todo as a type (id, task, isChanged) */}
                     {todos.map((todo) => ( 
